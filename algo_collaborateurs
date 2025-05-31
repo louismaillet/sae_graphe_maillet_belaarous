@@ -1,0 +1,27 @@
+# SAE Exploration algorithmique d'un problème
+
+Voici l'algorithme permettant d'obtenir l'ensemble des collaborateurs à distance k d'un acteur ou d'une actrice. A vous de l'implémenter en JAVA
+
+Algo collaborateurs_proches(G,u,k):
+    """Algorithme renvoyant l'ensemble des acteurs à distance au plus k de l'acteur u dans le graphe G. La fonction renvoie None si u est absent du graphe.
+    
+    Parametres:
+        G: le graphe
+        u: le sommet de départ
+        k: la distance depuis u
+    """
+    si u n'est pas un sommet de G:
+        afficher u+"est un illustre inconnu"
+        fin de l'algorithme
+    collaborateurs = Ensemble vide
+    Ajouter u à l'ensemble des collaborateurs
+    pour tout i allant de 1 à k:
+        collaborateurs_directs = Ensemble Vide
+        Pour tout collaborateur c dans l'ensemble des collaborateurs
+            Pour tout voisin v de c:
+                si v n'est pas dans l'ensemble des collaborateurs:
+                    Ajouter v à l'ensemble des collaborateurs_directs
+        Remplacer collaborateurs par l'union des collaborateurs et collaborateurs_directs
+    Renvoyer l'ensemble collaborateurs
+    
+Vous pouvez par exemple utiliser la classe HashSet en java (https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html) pour les ensembles.
